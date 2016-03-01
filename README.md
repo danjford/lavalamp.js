@@ -9,14 +9,34 @@ A replacement for infinite scroll. Works both ways (next and previous).
 
 ## HTML structure
 
-* `a.button#previous` = `Load previous`
+* `a.button#lavalamp-previous` = `Load previous`
 * your page content
-* `a.button#next` = `Load next`
+* `a.button#lavalamp-next` = `Load next`
 * `a#lavalamp` including a `span` = `Loading`
+
+## Usage
+
+After adding both `lavalamp.css` and `lavalamp.js` to your project, you can now use Lavalamp.
+
+First you declare an instance of Lavalamp and assign it to a variable:
+
+```
+var lavalamp = new Lavalamp();
+
+```
+
+This now gives you access to 2 prototype functions `start()` and `stop()`;
+
+
+`start()` accepts one argument, the direction of the animation i.e. either `up` or `down`.
+
+`stop()` doesn't accept any arguments, it simply ends the animation in the direciton that you specified in `start()`.
+
+By **default** `start()` is already fired when the `#lavalamp-previous` and `#lavalamp-next` buttons are clicked. After this event you would only then need to find the sufficient place to end the animation e.g. after an AJAX request.
 
 ## How it works
 
-There are 2 buttons: `#previous` and `#next`, that encapsulate the page.
+There are 2 buttons: `#lavalamp-previous` and `#lavalamp-next`, that encapsulate the page.
 
 When either of them is clicked, the `#lavalamp` HTML element covers the whole viewport while both the **content** of the page and the **scroll position** are updated.
 
