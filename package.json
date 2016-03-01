@@ -5,13 +5,14 @@
   "main": "dist/lavalamp.js",
   "jsnext:main": "src/main.js",
   "scripts": {
-    "start": "npm run clean && npm-run-all --parallel watch:*",
+    "start": "npm run clean && npm-run-all --parallel server:* watch:*",
     "build": "npm run bundle",
     "bundle": "rollup -c rollup.config.js",
     "watch:js": "npm run clean && watchman ./src/js \"npm run build\"",
     "watch:css": "watchman ./src/css \"npm run copy:css\"",
     "copy:css": "cp -r ./src/css/ ./dist/",
     "clean": "rm -drf dist && mkdir -p ./dist/",
+    "server:browser-sync": "browser-sync start --no-open --no-notify --server --files='demo/**/*, dist/**/*'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
