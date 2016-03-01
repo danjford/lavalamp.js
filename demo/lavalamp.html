@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
     <title>LavaLamp.js</title>
     <link rel="stylesheet" href="reset.css" type="text/css">
-    <link rel="stylesheet" href="lavalamp.css" type="text/css">
+    <link rel="stylesheet" href="demo.css" type="text/css">
+    <link rel="stylesheet" href="../dist/lavalamp.css" type="text/css">
   </head>
   <body>
     <a class="button" id="lavalamp-previous">
@@ -39,12 +40,18 @@
     <a id="lavalamp">
       <span>Loading</span>
     </a>
-    <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="lavalamp.js"></script>
+    <script type="text/javascript" src="../dist/lavalamp.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript">
-      $(document).ready( function() {
-        $('body').lavalamp();
+      var lavalamp = new Lavalamp();
+
+      // Simulating ajax request code
+      $('.button').on('click', function() {
+        setTimeout(function() {
+          lavalamp.stop();
+        }, 1000);
       });
+
     </script>
   </body>
 </html>

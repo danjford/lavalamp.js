@@ -1,0 +1,111 @@
+.lavalamp-up-start#lavalamp,
+.lavalamp-up-end#lavalamp,
+.lavalamp-down-start#lavalamp,
+.lavalamp-down-end#lavalamp {
+  -webkit-animation: up-start 1000ms 1 cubic-bezier(0, 1, 0, 1) both;
+  display: block;
+}
+
+.lavalamp-up-end#lavalamp {
+  -webkit-animation-name: up-end;
+  -webkit-animation-duration: 500ms;
+}
+
+.lavalamp-down-start#lavalamp {
+  -webkit-animation-name: down-start;
+}
+
+.lavalamp-down-end#lavalamp {
+  -webkit-animation-name: down-end;
+  -webkit-animation-duration: 500ms;
+}
+
+@-webkit-keyframes up-start {
+  0% {
+    bottom: 0;
+    height: 60px;
+  }
+
+  100% {
+    bottom: 0;
+    height: 100%;
+  }
+
+}
+
+@-webkit-keyframes up-end {
+  0% {
+    bottom: auto;
+    height: 100%;
+    top: 0;
+  }
+
+  100% {
+    bottom: auto;
+    height: 60px;
+    top: 0;
+  }
+
+}
+
+@-webkit-keyframes down-start {
+  0% {
+    height: 60px;
+    top: 0;
+  }
+
+  100% {
+    height: 100%;
+    top: 0;
+  }
+
+}
+
+@-webkit-keyframes down-end {
+  0% {
+    bottom: 0;
+    height: 100%;
+    top: auto;
+  }
+
+  100% {
+    bottom: 0;
+    height: 60px;
+    top: auto;
+  }
+
+}
+
+.lavalamp-up-start#lavalamp:before,
+.lavalamp-up-start#lavalamp:after,
+.lavalamp-down-start#lavalamp:before,
+.lavalamp-down-start#lavalamp:after {
+  -webkit-animation: pulse 2000ms infinite ease-out both;
+  display: block;
+}
+
+.lavalamp-up-start#lavalamp:after,
+.lavalamp-down-start#lavalamp:after {
+  -webkit-animation-delay: 500ms;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1, 0.1);
+  }
+
+  30% {
+    opacity: 0.5;
+  }
+
+  70% {
+    opacity: 0;
+    -webkit-transform: scale(1, 1);
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}

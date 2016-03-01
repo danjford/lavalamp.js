@@ -1,0 +1,34 @@
+{
+  "name": "lavalamp.js",
+  "version": "1.0.0",
+  "description": "lavalamp.js",
+  "main": "dist/lavalamp.js",
+  "jsnext:main": "src/main.js",
+  "scripts": {
+    "start": "npm run clean && npm-run-all --parallel watch:*",
+    "build": "npm run bundle",
+    "bundle": "rollup -c rollup.config.js",
+    "watch:js": "npm run clean && watchman ./src/js \"npm run build\"",
+    "watch:css": "watchman ./src/css \"npm run copy:css\"",
+    "copy:css": "cp -r ./src/css/ ./dist/",
+    "clean": "rm -drf dist && mkdir -p ./dist/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgthms/lavalamp.js.git"
+  },
+  "author": "jgthms",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jgthms/lavalamp.js/issues"
+  },
+  "homepage": "https://github.com/jgthms/lavalamp.js#readme",
+  "devDependencies": {
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "npm-run-all": "^1.5.1",
+    "rollup": "^0.25.4",
+    "rollup-plugin-babel": "^2.4.0",
+    "watchman": "^0.1.8"
+  }
+}
