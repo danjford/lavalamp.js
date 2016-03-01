@@ -34,6 +34,16 @@ This now gives you access to 2 prototype functions `start()` and `stop()`;
 
 By **default** `start()` is already fired when the `#lavalamp-previous` and `#lavalamp-next` buttons are clicked. After this event you would only then need to find the sufficient place to end the animation e.g. after an AJAX request.
 
+For example:
+
+```
+var lavalamp = new Lavalamp();
+
+$.getJSON('/someurl').done(function() {
+  lavalamp.stop();
+});
+```
+
 ## How it works
 
 There are 2 buttons: `#lavalamp-previous` and `#lavalamp-next`, that encapsulate the page.
