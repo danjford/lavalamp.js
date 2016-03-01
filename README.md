@@ -34,14 +34,23 @@ This now gives you access to 2 prototype functions `start()` and `stop()`;
 
 By **default** `start()` is already fired when the `#lavalamp-previous` and `#lavalamp-next` buttons are clicked. After this event you would only then need to find the sufficient place to end the animation e.g. after an AJAX request.
 
-For example:
+Here is an example using different buttons to those provided, firing an ajax request:
 
 ```
 var lavalamp = new Lavalamp();
 
-$.getJSON('/someurl').done(function() {
-  lavalamp.stop();
+$('button').on('click', function() {
+
+  // Start the loading animation
+  lavalamp.start();
+
+  $.getJSON('/someurl').always(function() {
+    // End the loading animation after request is finished
+    lavalamp.stop();
+  });
+
 });
+
 ```
 
 ## How it works
