@@ -16,6 +16,10 @@
   vertical-align: top;
 }
 
+.button {
+  cursor: pointer;
+}
+
 #lavalamp {
   display: none;
   height: auto;

@@ -1,8 +1,6 @@
 let direction = '';
-import { animations } from './config';
 const lavalampEl = document.getElementById('lavalamp'),
   padding = 500;
-
 
 // Event for the 'next' button click
 export const nextClick = () => {
